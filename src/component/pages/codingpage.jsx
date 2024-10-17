@@ -1,5 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Anagram, FindPalinderom, SecondLargestElement, ZerosToEnd, ZerosToTop } from "../utiils/functions";
+import {
+  Anagram,
+  FindPalinderom,
+  SecondLargestElement,
+  ZerosToEnd,
+  ZerosToTop,
+  SortArray,
+  BinarySearch,
+  pairOfgivenSum,
+  LargestPalimdrom,
+  RotateArrLeft,
+  RotateArrRight,
+  CheckValidStr
+} from "../utiils/functions";
 export const Codingpage = () => {
   const [inputfield1, setInputfield1] = useState()
   const [inputfield2, setInputfield2] = useState()
@@ -28,6 +41,33 @@ export const Codingpage = () => {
       let result = ZerosToTop(arr1)
       setOutput(result)
     }
+    else if (type === 'SortArray') {
+      let result = SortArray(arr1)
+      setOutput(result)
+    } else if (type === 'Findtarget') {
+      let result = BinarySearch(arr1, inputfield2)
+      setOutput(result)
+    }
+    else if (type === 'SumOfPair') {
+      let result = pairOfgivenSum(arr1, inputfield2)
+      setOutput(result)
+    }
+    else if (type === 'LargestPalimdrom') {
+      let result = LargestPalimdrom(inputfield2)
+      setOutput(result)
+    }
+    else if (type === 'RotateArrLeft') {
+      let result = RotateArrLeft(arr1, inputfield2)
+      setOutput(result)
+    }
+    else if (type === 'RotateArrRight') {
+      let result = RotateArrRight(arr1, inputfield2)
+      setOutput(result)
+    }
+    else if (type === 'CheckValidstr') {
+      let result = CheckValidStr(inputfield2)
+      setOutput(result)
+    }
   }
 
   // const handleInputAnagram = () => {
@@ -38,7 +78,7 @@ export const Codingpage = () => {
   return (
     <div>
       <div>
-        <div>
+        <div className="AppBox">
           {/* question 1 */}
           <dl>
             <dt>
@@ -210,12 +250,330 @@ console.log(SecondMaxele);`}
             <br />
             <dd><button onClick={() => handleInputPalindrom("ZeroToTop")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
           </dl>
-          <div>
-            Code editor
-          </div>
+          {/* Question 6 */}
+          <dl>
+            <dt>
+              <h3>Q 6 :- Sort an array</h3>
+            </dt>
+            <dd>
+              <pre>
+                {`function SortArray(arr) {
+  let fq = {};
+  let N = arr.length;
+  for (let i = 0; i < N; i++) {
+    let currentele = arr[i];
+    if (fq[currentele]) {
+      fq[currentele]++;
+    } else {
+      fq[arr[i]] = 1;
+    }
+  }
+  console.log(fq);
+  // Method 1 
+  for (let j = 0; j < N; j++) {
+    if (fq[0] > 0) {
+      arr[j] = 0;
+      fq[0]--;
+    } else if (fq[1] > 0) {
+       arr[j] = 1;
+       fq[1]--;
+     } else if (fq[2] > 0) {
+       arr[j] = 2;
+       fq[2]--;
+     }
+   }
+  // Method 2
+  let index = 0;
+  for (let key in fq) {
+    while (fq[key] > 0) {
+      arr[index] = parseInt(key);
+      fq[key]--;
+      index++;
+    }
+  }
+  return arr;
+}
+let SortArr = SortArray([1, 2, 0, 0, 2, 1]);
+console.log(SortArr);   // output [0,0,1,1,2,2]  
+// Notes : - 
+  In JavaScript, object keys that resemble integers are automatically sorted in 
+  ascending numeric order.if you use array of integers 
+
+                `}
+              </pre>
+            </dd>
+            <dd>Input : - <input type="text" placeholder="Test Input" onChange={(e) => setArr1(e.target.value)} /></dd>
+            <br />
+            <dd><button onClick={() => handleInputPalindrom("SortArray")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
+          </dl>
+          {/* Question 7*/}
+          <dl>
+            <dt>
+              <h3>Q 7 :- Given sorted Array of length N and you have to find  the num in it</h3>
+            </dt>
+            <dd>
+              <pre>
+                {`function BinarySearch(newArr, B) {
+  let N = newArr.length;
+  let left = 0;
+  let right = N - 1;
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (newArr[mid] === B) {
+      return newArr[mid];
+    } else if (newArr[mid] > B) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return -1;
+}
+let Binarysearch = BinarySearch([-42, -2, 5, 7, 23, 87, 509], -2);
+console.log(Binarysearch);
+
+                `}
+              </pre>
+            </dd>
+            <dd>Input : - <input type="text" placeholder="Test Input" onChange={(e) => setArr1(e.target.value)} /></dd>
+            <dd>Input : - <input type="text" placeholder="Test Input" onChange={(e) => setInputfield2(e.target.value)} /></dd>
+            <br />
+            <dd><button onClick={() => handleInputPalindrom("Findtarget")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
+          </dl>
+          {/* Question 8 */}
+          <dl>
+            <dt>
+              <h3>Q 8 :- Check if a pair with given sum exists in Array</h3>
+            </dt>
+            <dd>
+              <pre>
+                {`pairOfgivenSum(A) {
+    let N = A.length;
+    let target = 10;
+    let arr = new Set();
+    for (let i = 0; i < N; i++) {
+        let element = target - A[i];
+        if (arr.has(element)) {
+            return "yes";
+        } else {
+            arr.add(A[i]);
+        }
+    }
+    return "No";
+}
+let pairexist = pairOfgivenSum([1, 5, 6, 4, 2, 11]);
+console.log(pairexist); // Out put No
+
+                `}
+              </pre>
+            </dd>
+            <dd> array  : - <input type="text" placeholder="Test Input" onChange={(e) => setArr1(e.target.value)} /></dd>
+            <dd>Target : - <input type="text" placeholder="Test Input" onChange={(e) => setInputfield2(e.target.value)} /></dd>
+            <br />
+            <dd><button onClick={() => handleInputPalindrom("SumOfPair")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
+          </dl>
+          {/* Question 9*/}
+          <dl>
+            <dt>
+              <h3>Q 9 :- Largest LargestPalimdrom in a string</h3>
+            </dt>
+            <dd>
+              <pre>
+                {`function LargestPalimdrom(A) {
+  let N = A.length;
+  let max = 0;
+  let start = 0;
+  let end = 0;
+  for (let i = 0; i < N; i++) {
+    let left = i;
+    let right = i + 1;
+    while (left >= 0 && right < N) {
+      if (A[left] !== A[right]) {
+        break;
+      } else {
+        if (right - left > max) {
+          start = left;
+          end = right;
+          max = right - left;
+        }
+        left--;
+        right++;
+      }
+    }
+    left = i - 1;
+    right = i + 1;
+    while (left >= 0 && right < N) {
+      if (A[left] !== A[right]) {
+        break;
+      } else {
+        if (right - left > max) {
+          start = left;
+          end = right;
+          max = right + 1 - left;
+        }
+        left--;
+        right++;
+      }
+    }
+  }
+  console.log(max, start, end);
+}
+LargestPalimdrom("aaabaa");
+
+                `}
+              </pre>
+            </dd>
+
+            <dd>String : - <input type="text" placeholder="Test Input" onChange={(e) => setInputfield2(e.target.value)} /></dd>
+            <br />
+            <dd><button onClick={() => handleInputPalindrom("LargestPalimdrom")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
+          </dl>
+          {/* Question 10*/}
+          <dl>
+            <dt>
+              <h3>Q 10 :- Rotate Array  from  left</h3>
+            </dt>
+            <dd>
+              <pre>
+                {`function RotateArrLeft(A, K) {
+  let N = A.length;
+  function reverse(arr, start, end) {
+    while (start < end) {
+      console.log(start, end);
+      let temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+      start++;
+      end--;
+    }
+  }
+  // reverse(A, 0, N - 1); /// to rotate right
+  reverse(A, 0, K - 1);
+  reverse(A, K, N - 1);
+  reverse(A, 0, N - 1); /// to rotate left
+  console.log(A);
+}
+
+RotateArrLeft([1, 2, 3, 4, 5, 6], 4);
+
+                `}
+              </pre>
+            </dd>
+
+            <dd> array  : - <input type="text" placeholder="Test Input" onChange={(e) => setArr1(e.target.value)} /></dd>
+            <dd>Target : - <input type="text" placeholder="Test Input" onChange={(e) => setInputfield2(e.target.value)} /></dd>
+            <br />
+            <dd><button onClick={() => handleInputPalindrom("RotateArrLeft")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
+          </dl>
+          {/* Question 11*/}
+          <dl>
+            <dt>
+              <h3>Q 11 :- Rotate Array  from  right</h3>
+            </dt>
+            <dd>
+              <pre>
+                {`function RotateArrRight(A, K) {
+  let N = A.length;
+  function reverse(arr, start, end) {
+    while (start < end) {
+      console.log(start, end);
+      let temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+      start++;
+      end--;
+    }
+  }
+  reverse(A, 0, N - 1); /// to rotate right
+  reverse(A, 0, K - 1);
+  reverse(A, K, N - 1);
+  // reverse(A, 0, N - 1); /// to rotate left
+  console.log(A);
+}
+
+RotateArrRight([1, 2, 3, 4, 5, 6], 4);
+                `}
+              </pre>
+            </dd>
+            <dd> array  : - <input type="text" placeholder="Test Input" onChange={(e) => setArr1(e.target.value)} /></dd>
+            <dd>Target : - <input type="text" placeholder="Test Input" onChange={(e) => setInputfield2(e.target.value)} /></dd>
+            <br />
+            <dd><button onClick={() => handleInputPalindrom("RotateArrRight")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
+          </dl>
+          {/* Question 12*/}
+          <dl>
+            <dt>
+              <h3>Q 12 :- Check if the given str is valid or not </h3>
+            </dt>
+            <dd>
+              <pre>
+                {`function CheckValidStr(str) {
+  let newArr = [];   // create a new array to store opening of str
+  for (let i = 0; i < str.length; i++) {
+  //check if its opening of str and there type
+    if (str[i] === "(" || str[i] === "[" || str[i] === "{") {
+    // if true then push to newArr
+      newArr.push(str[i]);   
+    }
+
+    //   from here check if its close str and match the last element in the array if not return false and its your ans
+    else if (str[i] === ")") {
+      if (newArr[newArr.length - 1] === "(") {
+        newArr.pop();
+      } else {
+        return false;
+      }
+    } else if (str[i] === "]") {
+      if (newArr[newArr.length - 1] === "[") {
+        newArr.pop();
+      } else {
+        return false;
+      }
+    } else if (str[i] === "}") {
+      if (newArr[newArr.length - 1] === "{") {
+        newArr.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+    //   if length of the str is greater the 0 then false else true
+  if (newArr.length > 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+let CheckStrvalid = CheckValidStr("[)}");
+console.log(CheckStrvalid); // false
+                `}
+              </pre>
+            </dd>
+            <dd>Target : - <input type="text" placeholder="Test Input" onChange={(e) => setInputfield2(e.target.value)} /></dd>
+            <br />
+            <dd><button onClick={() => handleInputPalindrom("CheckValidstr")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
+          </dl>
         </div>
       </div>
     </div>
   );
 }
 // export default Codingpage;
+
+
+// {/* Question */ }
+// <dl>
+//   <dt>
+//     <h3>Q NA :-  </h3>
+//   </dt>
+//   <dd>
+//     <pre>
+//       {`
+//                 `}
+//     </pre>
+//   </dd>
+//   <dd>Array : - <input type="text" placeholder="Test Input" onChange={(e) => setInputfield2(e.target.value)} /></dd>
+//   <dd>Target : - <input type="text" placeholder="Test Input" onChange={(e) => setInputfield2(e.target.value)} /></dd>
+//   <br />
+//   <dd><button onClick={() => handleInputPalindrom("CheckValidstr")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
+// </dl>

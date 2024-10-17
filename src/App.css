@@ -54,6 +54,11 @@ h3 {
   color: rgb(27, 19, 183);
 }
 pre {
-  font-size: 18px;
+  font-size: 1vw;
   font-weight: 600;
+}
+.AppBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
