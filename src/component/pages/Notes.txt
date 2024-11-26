@@ -1,0 +1,60 @@
+Q -->  Array 
+Ans --> Array is linear data struture that is use to collect similar type of data in a sequential order.
+
+eg.  int arr[N]
+
+Q --> how to access element
+ans -->  using arr[0], arr[2] and soo on.
+
+
+
+Theory Questions
+1. JavaScript Basics
+What are the differences between var, let, and const?
+What is the difference between == and === in JavaScript?
+Explain the concept of hoisting in JavaScript.
+What are undefined, null, and NaN in JavaScript? How do they differ?
+Explain the concept of closures with an example.
+What are JavaScript data types? Differentiate between primitive and reference types.
+Explain the scope in JavaScript and the difference between function, block, and global scopes.
+What are Immediately Invoked Function Expressions (IIFE)?
+How does JavaScript's event loop work? Explain with examples.
+What are template literals, and how are they different from normal strings?
+2. Functions and Objects
+Explain the difference between function declarations and function expressions.
+What are arrow functions, and how are they different from traditional functions?
+Explain the difference between call(), apply(), and bind() methods.
+What is the prototype chain in JavaScript?
+How do you create objects in JavaScript? Explain different methods (object literals, constructors, etc.).
+What are higher-order functions? Provide an example.
+What is the difference between shallow copy and deep copy in JavaScript?
+Explain the concept of this in JavaScript.
+What are getters and setters in JavaScript?
+What are promises, and how are they useful in JavaScript?
+3. Asynchronous Programming
+What is the difference between synchronous and asynchronous JavaScript?
+Explain async and await in JavaScript.
+What is the purpose of the fetch() API? Provide an example.
+How are setTimeout and setInterval used in JavaScript?
+What is callback hell, and how can it be avoided?
+4. ES6 and Beyond
+What are ES6 modules, and how do they differ from CommonJS modules?
+What is destructuring, and how is it useful?
+What is the spread operator, and how does it work?
+Explain the difference between for...of and for...in.
+What are weak maps and weak sets?
+5. Error Handling
+How does error handling work in JavaScript? Explain try...catch.
+What are custom errors, and how do you create them in JavaScript?
+What is the difference between a runtime error and a logical error?
+6. DOM and Browser
+How do you manipulate the DOM in JavaScript? Provide an example.
+What is the difference between document.querySelector and document.getElementById?
+What are event delegation and event bubbling? Explain with examples.
+What is the difference between localStorage, sessionStorage, and cookies?
+What is the difference between addEventListener and inline event handlers?
+7. Miscellaneous
+What is the purpose of the strict mode in JavaScript?
+Explain how JSON.stringify() and JSON.parse() work.
+What are Web Workers, and why are they used?
+What are debounce and throttle in JavaScript

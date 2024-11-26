@@ -1,0 +1,555 @@
+time =  10:26
+
+
+Important and need to check example and use 
+
+1. react.lazy
+2. keys in react
+3. Usemeno
+4. useLayoutEffect
+5. Lifecycle method in react
+6. what is inline function
+
+
+
+
+
+
+
+Q -- what is react ?
+Ans -- React is a javascript library for building single page application and it use component based acrchitecture and virtule DOM
+
+Q -- what are the feature of reactjs
+Ans -- Feature of reactjs are : -
+1. JSX - syntax extention for javascript help to write html with javascript
+2. Components : Encapsulated UI piece.
+3. Virdual DOM : Efficient rendering
+4. One-way-data binding: Unidirection data flow
+5. Hooks : state and lifecycle managemant
+
+
+Q  --what virtual DOM ?
+Ans --   lifgweight copy of real dom. React use it to Efficiently update the Ui by minimizing direct dom manipulation.
+
+
+Q -- difference b/w class and funtional components ?
+Ans -- Class component: they have they own states and lifecycle method and are managed by ES6 classes
+functional components : they are stateless by default, but with the use of react hooks they can handle states and lifecycle
+
+
+Q -- what are props in  reactjs?
+Ans -- Props are immutable data pass from parent to child component
+
+Q -- what are states in reactjs?
+Ans -- State are Object use to hold data within the component and they are mutable data
+and they are managed  y using usestate and this.state
+
+Q -- what are hooks?
+Ans -- Hooks are the funtions that help funtional component to get access of state and lifecycle method
+
+Q -- what is the difference b/w Props and state
+Ans -- Props : Read-Only and passed by parent 
+States: local to a component and mutable
+
+Q -- what is the use of useEffect?
+Ans -- Handle side effects like data fetching, subscription, or dom manupulation in a funtion
+
+
+///// Intermediate Questions
+Q -- what are React.Fragment ?
+Ans -- A wrapper component to avoid adding  extra nodes to the dom.
+
+Q -- what is the differenec b/w contoller and uncontroller?
+Ans -- Controlled Components : React Controls form inputs via states
+Uncontrolled Components : Dom controls the form inputs using refs
+
+Q --  What is context api?
+Ans --  Provides a way to pass data through the component tree without prop drilling
+
+Q -- what is lazy loading in reactjs
+Ans --  A technique  to load compoennt  or route only when needed using Reasct.lazy
+
+Q -- what are the significance of keys in react
+Ans -- Key help to identify which element is added and deleted that help to enhence rending process
+
+
+Q -- what is server-side rendering (SSR) in reactjs
+Ans -- rendering react components on the server and send html to the clint for faster loading and sessionStorage
+
+Q -- what is reconciliation ?
+Ans -- React compares the virtual DOMs with the previous version and updates only the changed part  
+
+
+
+
+
+JavaScript Interview Questions
+1. What is JavaScript?
+JavaScript is a lightweight, interpreted programming language. It is designed for creating network-centric applications and is the backbone of web interactivity.
+2. Explain the difference between var, let, and const.
+var: Function-scoped, can be re-declared, and does not respect block scope.
+let: Block-scoped, cannot be re-declared, and is ideal for mutable variables.
+const: Block-scoped, cannot be re-declared, and must be initialized during declaration. Ideal for constants.
+3. What is the difference between == and ===?
+==: Performs type coercion; compares values after converting them to a common type.
+===: Strict equality; compares values and types.
+4. Explain call(), apply(), and bind().
+call(): Invokes a function with a specific this context and arguments as a comma-separated list.
+apply(): Similar to call(), but arguments are passed as an array.
+bind(): Returns a new function with the specified this context, without immediately invoking it.
+5. What is hoisting in JavaScript?
+Hoisting is a mechanism where variables and function declarations are moved to the top of their scope during compile time. Only declarations are hoisted, not initializations.
+6. What is a closure in JavaScript?
+A closure is a function that retains access to its outer scope, even after the outer function has returned.
+7. Explain the difference between synchronous and asynchronous programming.
+Synchronous: Code is executed line by line; blocking.
+Asynchronous: Code does not wait for previous operations to complete; non-blocking.
+8. What is the event loop?
+The event loop is a mechanism in JavaScript that handles asynchronous operations by executing the call stack and event queue.
+9. What are promises?
+Promises are objects representing the eventual completion or failure of an asynchronous operation, with methods like .then(), .catch(), and .finally().
+10. What are async/await?
+async/await is syntactic sugar for promises, making asynchronous code look synchronous.
+HTML Interview Questions
+11. What is the difference between HTML and XHTML?
+HTML is more lenient and allows errors, while XHTML is stricter and follows XML rules.
+12. What are semantic tags in HTML?
+Semantic tags like <header>, <footer>, <article> provide meaning to the content rather than its appearance.
+13. What is the difference between <section> and <div>?
+<section>: Used for semantically related content.
+<div>: Generic container with no semantic meaning.
+14. Explain the difference between <script> tags with and without defer.
+defer: Executes after the document is parsed.
+Without defer: Executes immediately when encountered.
+15. What is the purpose of the alt attribute in <img>?
+Provides alternative text for images, improving accessibility and SEO.
+CSS Interview Questions
+16. What is the difference between absolute, relative, fixed, and sticky positioning?
+absolute: Positioned relative to the nearest positioned ancestor.
+relative: Positioned relative to its normal position.
+fixed: Positioned relative to the viewport.
+sticky: Switches between relative and fixed based on scroll.
+17. What are CSS pseudo-classes?
+Pseudo-classes define the special state of an element, e.g., :hover, :nth-child(), :focus.
+18. What is the difference between em and rem in CSS?
+em: Relative to the font size of its parent.
+rem: Relative to the font size of the root element.
+19. What are CSS transitions?
+CSS transitions allow smooth changes between property values over time.
+20. What are media queries in CSS?
+Media queries allow responsive designs by applying styles based on screen size, resolution, etc.
+ReactJS Interview Questions
+21. What is ReactJS?
+ReactJS is a JavaScript library for building user interfaces, focusing on components and a virtual DOM.
+22. What are props in React?
+Props are inputs to a component, allowing data to be passed between components.
+23. What is the difference between state and props?
+State: Managed within the component.
+Props: Passed from a parent component and are read-only.
+24. What is the virtual DOM in React?
+The virtual DOM is a lightweight copy of the real DOM that React uses to optimize updates.
+25. What are React Hooks?
+Hooks allow function components to manage state and lifecycle, e.g., useState, useEffect.
+Redux Interview Questions
+26. What is Redux?
+Redux is a state management library for JavaScript applications, centralizing application state.
+27. Explain the three principles of Redux.
+Single source of truth.
+State is read-only.
+Changes are made through pure reducers.
+28. What is the difference between Redux and Context API?
+Redux is more powerful for complex state management, while Context API is simpler but limited to passing data down the component tree.
+29. What are actions in Redux?
+Actions are payloads of information sent to the store to describe changes.
+30. What is a reducer in Redux?
+Reducers are pure functions specifying how the state changes in response to actions.
+Let me know if you need the full list of 100 questions or more details!
+
+
+
+
+
+
+
+Here’s a list of coding questions with answers for JavaScript, ReactJS, and Redux:
+
+JavaScript Coding Questions
+1. Reverse a String
+javascript
+Copy code
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+console.log(reverseString("hello")); // Output: "olleh"
+2. Check if a Number is Prime
+javascript
+Copy code
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+console.log(isPrime(17)); // Output: true
+3. Find the Largest Element in an Array
+javascript
+Copy code
+function findLargest(arr) {
+  return Math.max(...arr);
+}
+console.log(findLargest([1, 5, 3, 9])); // Output: 9
+4. Remove Duplicates from an Array
+javascript
+Copy code
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4])); // Output: [1, 2, 3, 4]
+5. Flatten a Nested Array
+javascript
+Copy code
+function flattenArray(arr) {
+  return arr.flat(Infinity);
+}
+console.log(flattenArray([1, [2, [3, [4]]]])); // Output: [1, 2, 3, 4]
+ReactJS Coding Questions
+6. Create a Counter Component
+javascript
+Copy code
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+7. Pass Props to a Child Component
+javascript
+Copy code
+function Parent() {
+  const message = "Hello, World!";
+  return <Child text={message} />;
+}
+
+function Child({ text }) {
+  return <h1>{text}</h1>;
+}
+8. Fetch Data Using useEffect
+javascript
+Copy code
+import React, { useState, useEffect } from "react";
+
+function FetchData() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((json) => setData(json));
+  }, []);
+
+  return (
+    <ul>
+      {data.map((item) => (
+        <li key={item.id}>{item.title}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default FetchData;
+Redux Coding Questions
+9. Basic Redux Store Setup
+javascript
+Copy code
+import { createStore } from "redux";
+
+const initialState = { count: 0 };
+
+function reducer(state = initialState, action) {
+  switch (action.type) {
+    case "INCREMENT":
+      return { count: state.count + 1 };
+    case "DECREMENT":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+const store = createStore(reducer);
+
+store.dispatch({ type: "INCREMENT" });
+console.log(store.getState()); // Output: { count: 1 }
+10. Connect a React Component to Redux
+javascript
+Copy code
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+function Counter() {
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+Additional Coding Challenges
+11. Find Factorial of a Number
+javascript
+Copy code
+function factorial(num) {
+  return num <= 1 ? 1 : num * factorial(num - 1);
+}
+console.log(factorial(5)); // Output: 120
+12. Check for Palindrome
+javascript
+Copy code
+function isPalindrome(str) {
+  const reversed = str.split('').reverse().join('');
+  return str === reversed;
+}
+console.log(isPalindrome("madam")); // Output: true
+13. Debounce a Function
+javascript
+Copy code
+function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+const debouncedFn = debounce(() => console.log("Called!"), 500);
+debouncedFn();
+14. Create a React To-Do List
+javascript
+Copy code
+import React, { useState } from "react";
+
+function TodoList() {
+  const [tasks, setTasks] = useState([]);
+  const [input, setInput] = useState("");
+
+  const addTask = () => {
+    setTasks([...tasks, input]);
+    setInput("");
+  };
+
+  return (
+    <div>
+      <input value={input} onChange={(e) => setInput(e.target.value)} />
+      <button onClick={addTask}>Add Task</button>
+      <ul>
+        {tasks.map((task, idx) => (
+          <li key={idx}>{task}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoList;
+
+
+
+
+//////   javascript
+Question 1.
+-- What is javascrcipt ?
+Answer
+-- Javascript is a lightweight interpreter programming language, that use to build dynamic web pages and add functionality into it.
+
+Question 2.
+-- what are variables
+Answer
+-- variables are the name container that are used to hold values into it.
+
+
+Question 3.
+--defference b/w var let const ?
+Answer
+-- var - var is a funtional-scope and only we access within the funtuion where it is been decleared and also it is hoisted
+-- let - its block-scope type and only be access inside the block where its declared
+-- const - Its block-scope and cant we re-assign and must be initialized during declarations
+
+Question 4.
+-- defference b/w == and ===
+Answer -- 
+==: - use to compare to values and Performs type coercion
+===: - strict quality use to compare value and it type
+
+Question 5.
+-- use to call(), bind() and apply()
+Answer
+-- call() :- use to invoke a funtion with specific 'this' context and argument as a comma-separated list
+-- bind() :- use to return a new funtion with the specific 'this' context, without immidiately invoking it.
+-- apply() :- similar like call(), but agrument are passed as an array
+
+Question 6.
+-- WHat is hosting in javascript?
+Answer-- Hosting is javascript default behaviour where every variable and funtions declarations are moved to the top of there scope during compile time. Only declaration are hosted not initializations
+
+Question 7.
+-- what is closure function ?
+Answer
+--A closure is a funtion that remain access to its outer scope, even after the outer funtion stop execution
+
+
+Question 8.
+-- difference b/w synchronous and asynchronous
+Answer 
+-- synchronous:- code executed line by line is called synchronous and if there is any error in the code it brake the all page 
+-- asynchronous:- code executed in  a non-blocking and do not wait previous operation to complete is called asynchronous and it use callback, as/await method to work
+
+Question 9.
+-- what is event loop?
+Answer 
+-- event -loop in a javascrcipt is a mechanism that allows non-blocking asynchronous operations to be Performed. it 
+ensures that javascript, which has a single-threaded runtime, can handle multiple task Efficiently
+
+Question 10.
+-- what are promises
+Answer-- Promises are objects representing the eventiualy completion or failure of an asynchronous operation, with method like .them, .cathc and  finally()
+
+Question 11.
+-- what are async/await?
+Answer
+-- async/await are use to make synchronous code into asynchronous by adding async and await into it.
+or we can say that syntactic sugar for promises, making asynchronous code look synchronous.
+
+
+////// HTML
+Question 12.
+-- what is the difference b/w HTML/XHTML
+Answer
+-- HTML is more lenient and allow errors, while XHTML is stricter and follows XML rules.
+
+Question 13.
+-- What are semantic tags in HTML?
+Answer
+-- Semantic tags like <header>, <footer>, <article> provide meaning to the content rather then its appearance.
+
+Question 14.
+-- What are difference b/w <section> and <div>
+Answer
+-- <section>: use for semantically related content
+-- <diV> : Generic container with no semantic meaning
+
+Question 15.
+--Explain the difference between <script> tags with and without defer.
+Answer
+-- differ: Executes after document parsed.
+-- without differ: Executes immediately when encountered.
+
+Question 16.
+-- what is the purpose of the alt attribute in img ?
+Answer
+-- provide alternative text for images, improving accessibility and SEO.
+
+
+
+
+///////// CSS
+Question 17.
+-- what is the difference b/w absolute, relative, fixed, and sticky positioning in css?
+Answer
+-- relative: - The element is positioned relative to its normal position.
+-- absolute: - Positioned relative to the nearest ancestor.
+-- fixed: - Positioned relative to the viewport.
+-- sticky: - Switches b/w relative and fixed based on scroll.
+
+Question 18.
+-- what are CSS pseudo-classes?
+Answer
+-- pseudo-classes define the special state of an element, e.g., :hover, nth-child, :focus
+
+Question 19.
+--What is the difference between em and rem in CSS?
+Answer
+-- em:- relative to the font size of its parent.
+-- rem:- relative to the font size of the root element.
+
+Question 20.
+--
+Answer
+--
+
+
+
+/////ReactJS
+Question 21.
+--what is reactjs?
+Answer
+-- reactjs is a javascrcipt library for building user interfaces, focusing on components and virtual DOM
+
+Question 22.
+-- what are props in reactjs?
+Answer
+-- props are input in components, allowing data to pass between compoennt from parent to child
+
+Question 23
+-- difference b/w states and props
+Answer
+-- state:- states are use to manage data within the components
+-- props: - props are use to pass data from parent to child
+
+Question 24
+-- what is virtual DOM
+Answer
+-- Its lightweight copy of real DOM, that is used by reactjs to optimize update
+
+
+Question 25
+-- what are react hooks
+Answer
+-- hooks allow to funtion components to manage state and lifecycle, eg useState and useEffect
+
+
+Question 26
+--What is the difference between Redux and Context API?
+Answer
+--Redux is more powerful for complex state management, while Context API is simpler but limited to passing data down the component tree.
+
+
+Question 27
+--What are actions in Redux?
+Answer
+--Actions are payloads of information sent to the store to describe changes.
+
+Question 28
+--What is a reducer in Redux?
+Answer
+--Reducers are pure functions specifying how the state changes in response to actions.
+
+
+Question 29
+--
+Answer
+--
+
+Question 30
+--
+Answer
+--
+Question 30
+--
+Answer
+--
+//// linked list --

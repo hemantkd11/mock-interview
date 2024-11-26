@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <p id="count">0
+
+            </p>
+            <button onclick="counter()">count++</button>
+            <button id="btn" onclick="togelButton()">OFF</button>
+
+            <input type="text" id="searchBox" placeholder="Enter Search Item"
+                oninput="filterlist()">
+            <ul id="itemlist"></ul>
+        </div>
+        <div>
+            <input type="text" id="display" readonly>
+            <button onclick="calculate('+')">+</button>
+            <button onclick="calculate('-')">-</button>
+            <button onclick="calculate('*')">*</button>
+            <button onclick="calculate('/')">/</button>
+            <button onclick="calculate('%')">%</button>
+            <button onclick="clearsrn()">CL</button>
+            <button onclick="calculate('1')">1</button>
+            <button onclick="calculate('2')">2</button>
+            <button onclick="calculate('3')">3</button>
+            <button onclick="calculate('4')">4</button>
+            <button onclick="calculate('5')">5</button>
+            <button onclick="calculate('6')">6</button>
+            <button onclick="calculate('7')">7</button>
+            <button onclick="calculate('8')">8</button>
+            <button onclick="calculate('9')">9</button>
+            <button onclick="calculate('0')">0</button>
+
+            <button onclick="total()">=</button>
+        </div>
+        <div>
+            <table id="table"></table>
+        </div>
+        <script>
+
+            // let count  =  0 
+            // function counter(){
+            //     count++;
+            //     document.getElementById('count').innerHTML = count
+            // }
+            // const counter = {
+            //     count : 0 ,
+            //     increment : function(){
+            //         this.count++
+            //         document.getElementById("count").innerHTML =  this.count
+            //     }
+
+            // }
+            // class counter{
+            //     constructor(props){
+            //         super(props)
+            //         this.state = {
+            //         count : 0 
+            //         }
+            //     }
+            //     Increment(){
+            //         this.setState((prevS)=>({
+            //             count:prevS.count+1
+            //         }))
+
+            //         document.getElementById("count").innerHTML =  this.state.count
+            //     }
+            // }
+            let count = 0
+            function counter(){
+                count++
+                document.getElementById("count").innerHTML =  count
+            }
+            let button =  "ON"
+            function togelButton(){
+                if(button == "ON"){
+                    document.getElementById('btn').innerHTML = "OFF"
+                    button = "OFF"
+                }else if(button == "OFF"){
+                    document.getElementById('btn').innerHTML = "ON"
+                    button = "ON"
+                }
+            }
+            let items = ["apple", "banana", "orange", "cherry"];
+            function filterlist() {
+                // const [search, setSearch] = useState("");
+                const search =  document.getElementById('searchBox').value
+                const filterItem = items.filter((item) =>
+                    item.toLowerCase().includes(search.toLowerCase())
+
+                );
+                displayItem(filterItem)
+            }
+            function displayItem(itemtodisplay){
+                const list = document.getElementById('itemlist')
+                list.innerHTML = ""
+                itemtodisplay.forEach(element => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = element
+                    list.append(listItem)
+                });
+            }
+
+    
+            let display =  document.getElementById('display')
+            function calculate(input){
+                display.value +=input
+            }
+            function clearsrn(){
+                display.value = ""
+            }
+            function total(){
+                display.value = eval(display.value)
+            }
+        // displayItem(items)
+        function snakelader(){
+            let row = 10
+            let col  = 10
+            let num = 100
+            let table  = document.getElementById("table")
+            for(let i = 1 ; i <= row; i++){
+                let tr = document.createElement("tr")
+                let cells = []
+                for(let j = 0 ;  j < col ; j++){
+                    let td  = document.createElement("td")
+                    td.textContent = num
+                    cells.push(td)
+                    num--
+                }
+            if(i % 2 === 0){
+
+                cells.reverse()
+                
+            }
+            cells.forEach((cell) =>tr.appendChild(cell))
+            table.appendChild(tr)
+            }
+          
+        }
+        snakelader()
+        </script>
+    </body>
+</html>
