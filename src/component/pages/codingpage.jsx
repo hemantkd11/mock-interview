@@ -553,6 +553,77 @@ console.log(CheckStrvalid); // false
             <br />
             <dd><button onClick={() => handleInputPalindrom("CheckValidstr")} style={{ background: "skyblue" }}>Run Code</button> Output : - {output}</dd>
           </dl>
+          <div>
+            question.13  How does the this keyword work in JavaScript? <br />
+
+            ----  It refers to the context in which a function is called (e.g., the global object, an object, or undefined in strict mode).
+          </div>
+          <div>
+            question.14  What are JavaScript closures? Give an example.
+
+            <br />
+            -----  A closure is a function that remembers its lexical scope even when executed outside it.
+            {`function outer() {
+    let count = 0;
+    return function inner() {
+        count++;
+        return count;
+    };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+`}
+
+          </div>
+          <div>
+            Question.15 <em> What is the difference between synchronous and asynchronous programming?</em> <br />
+            ----- Synchronous: Tasks execute one at a time in order.
+            Asynchronous: Tasks can run independently, allowing others to execute concurrently.
+          </div>
+          <div>
+            Question 16 <em>Explain prototypes and prototypal inheritance.</em> <br />
+            Every JavaScript object has a prototype, an object it inherits properties from.
+          </div>
+          <div>
+            Question 17  <em>WHat are the differnece between call(), apply, bind</em><br />
+            call(): Calls a function with a specific this and arguments passed individually.
+            apply(): Similar to call, but arguments are passed as an array.
+            bind(): Returns a new function with a bound this.
+          </div>
+          <div>
+            Question 18 <em>WHat are  modules</em>
+            --- the are reuseable pieces of  code thta encapsulate funtionality.
+            they allow to organize your code into smaller, manageable files.
+          </div>
+          <div>
+            Question 19<em>What are JavaScript generators, and how do they work? </em>
+            <br />
+            Generators produce values on demand using yield.
+
+            {`function* generate() {
+              yield 1;
+            yield 2;`}
+
+          </div>
+          <div>
+            Question 20 <em>what is the DOM and how do you manipulate it</em><br />
+            --- the dom is the structure of html elements
+          </div>
+          <div>
+            Question 21 <em> What is debouncing and throttling?</em> <br />
+            ---- Debouncing: Delays function execution.
+            Throttling: Limits function execution rate.
+          </div>
+          <div>
+            Question 22 <em>what is the difference between local storage, session strorage and cookies?</em>
+            LocalStorage: Persistent storage.
+            SessionStorage: Temporary storage.
+            Cookies: Small data stored with the HTTP request.
+
+          </div>
+          Question 23  <em>How would you optimize a JavaScript application?</em>
+          --- Minimize DOM manipulation, use efficient data structures, lazy loading, and optimize state management.
         </div>
       </div>
     </div>
