@@ -623,7 +623,7 @@ console.log(counter()); // 2
 
           </div>
           Question 23  <em>How would you optimize a JavaScript application?</em>
-          --- Minimize DOM manipulation, use efficient data structures, lazy loading, and optimize state management.
+          --- Minimize DOM manipulations, use efficient data structures, lazy loading, and optimize state management.
         </div>
       </div>
     </div>
